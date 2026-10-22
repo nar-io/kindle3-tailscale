@@ -551,7 +551,8 @@ Logs: `/mnt/us/extensions/tailscale/logs/tailscaled.log` and `auth.log`.
 | `diag/fb-status.png` | Cropped framebuffer capture of KUAL status output |
 | `build-tailscale.ps1` | Reproducible cross-build |
 | `build-probes.ps1` | Runtime compatibility probes |
-| `deploy/deploy.ps1` | Installer (SSH, no SFTP) |
+| `deploy/installer.sh` | Standalone installer (runs on Kindle) |
+| `deploy/package.sh` | Creates distributable tarball |
 | `deploy/scripts/` | Runtime scripts, KUAL actions, uninstall/rollback |
 | `deploy/kual/` | KUAL `config.xml` and `menu.json` |
 | `tools/fb2png.ps1` | <PEER_8> 4bpp framebuffer to PNG |
