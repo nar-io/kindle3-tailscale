@@ -229,23 +229,59 @@ Two location choices are deliberate:
 
 ## 5. Install / deploy
 
-From Windows with an existing SSH key for `root@<<PEER_8>>`:
+### Option A: Standalone installer (recommended, runs on Kindle)
 
-```powershell
-powershell -ExecutionPolicy Bypass -File deploy\deploy.ps1
-powershell -ExecutionPolicy Bypass -File deploy\deploy.ps1 -Restart
+1. **Download the package** from [Releases](https://github.com/nar-io/kindle3-tailscale/releases) or build it:
+   ```sh
+   # On build machine (Linux/macOS/WSL):
+   cd deploy && ./package.sh
+   # Creates: dist/tailscale-kindle3-armv6.tar.gz
+   ```
+
+2. **Transfer to Kindle** (via USB to `/mnt/us/` or SSH):
+   ```sh
+   # Via SSH:
+   scp dist/tailscale-kindle3-armv6.tar.gz root@<KINDLE_IP>:/mnt/us/
+   ```
+
+3. **Install on Kindle** (SSH as root):
+   ```sh
+   cd /mnt/us
+   tar -xzf tailscale-kindle3-armv6.tar.gz
+   cd tailscale-kindle3-armv6
+   sh installer.sh
+   ```
+
+4. **Follow prompts** - the installer will:
+   - Create directory structure
+   - Install binaries and scripts
+   - Configure KUAL integration
+   - Verify checksums
+   - Optionally start the daemon
+
+### Option B: Manual installation
+
+Copy these to the Kindle manually:
+- `bin/tailscaled` and `bin/tailscale` → `/mnt/us/extensions/tailscale/bin/`
+- `scripts/*.sh`, `scripts/*.py` → `/mnt/us/extensions/tailscale/scripts/`
+- `kual/config.xml`, `kual/menu.json` → `/mnt/us/extensions/tailscale/`
+
+Then run `/mnt/us/extensions/tailscale/scripts/start.sh`.
+
+### Building the package yourself
+
+```sh
+# On Linux/macOS/WSL (requires Go 1.18.10 for linux/arm):
+cd deploy
+./package.sh
+# Output: ../dist/tailscale-kindle3-armv6.tar.gz (~24 MB)
 ```
 
-The <PEER_8> has no `sftp-server`, so `scp`/`sftp` do not work. The installer
-streams text over SSH stdin, streams binaries with byte-exact `cmd /c type`,
-installs via a temporary name plus `mv` (avoids `ETXTBSY` on a running daemon),
-and verifies the `tailscaled` MD5 on the device.
-
-Manual deployment is also possible; the only hard requirements are:
-
-- binaries at `bin/tailscaled` and `bin/tailscale`, executable;
-- scripts at `scripts/`, executable;
-- `config.xml` and `menu.json` at the extension root for KUAL.
+The package includes:
+- Pre-built ARMv6 binaries (tailscaled, tailscale)
+- All management scripts
+- KUAL configuration
+- Self-contained installer.sh (runs on Kindle, no PowerShell needed)
 
 ---
 

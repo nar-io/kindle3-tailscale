@@ -1,10 +1,12 @@
 # Build outputs
-dist/
 build/
 src/
 
 # Go toolchains (large, can be downloaded)
 toolchains/
+
+# Built binaries and packages (can be downloaded from releases)
+dist/
 
 # IDE/editor
 .vscode/
@@ -16,11 +18,5 @@ toolchains/
 .DS_Store
 Thumbs.db
 
-# Sanitization scripts
-sanitize*.ps1
-
 # AI session logs (not part of project)
 *.json
-
-# Large binary outputs (optional - can be added to releases)
-dist/
