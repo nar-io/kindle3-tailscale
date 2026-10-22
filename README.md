@@ -81,7 +81,7 @@ real-time kernel, and no package manager.
 
 ## 2. Why userspace networking (Approach A vs Approach B)
 
-### Approach A: kernel TUN â€” impossible without rebuilding the kernel
+### Approach A: kernel TUN -- impossible without rebuilding the kernel
 
 ```
 $ zcat /proc/config.gz | grep TUN
@@ -103,7 +103,7 @@ new kernel. The project constraints explicitly rule that out (no kernel, libc,
 or core-utility replacement), so Approach A was rejected on evidence, not
 convenience.
 
-### Approach B: `--tun=userspace-networking` â€” works, but is proxy-based
+### Approach B: `--tun=userspace-networking` -- works, but is proxy-based
 
 Tailscale's userspace backend implements the WireGuard and network stack in Go
 and does not need a TUN device. It exposes:
@@ -127,26 +127,26 @@ scope.
 
 The official release binary is ISA-compatible (`GOARM=5`) but not kernel
 compatible. As of October 2026 the current release is v1.104.2, built with Go
-1.27.3. Recent Go runtimes require kernel â‰¥ 3.2.
+1.27.3. Recent Go runtimes require kernel >= 3.2.
 
 Runtime probes were cross-compiled for ARMv6 and executed on the device:
 
 | Go | Result on kernel 2.6.26 |
 | --- | --- |
-| 1.17.13 | **Works** â€” goroutines, files, TCP, DNS, TLS all pass |
-| 1.18.10 | **Works** â€” full probe pass, TLS 1.3 handshake OK (`diag/probe_go1.18.10.txt`) |
+| 1.17.13 | **Works** -- goroutines, files, TCP, DNS, TLS all pass |
+| 1.18.10 | **Works** -- full probe pass, TLS 1.3 handshake OK (`diag/probe_go1.18.10.txt`) |
 | 1.19.13 | Fails at startup: `runtime: pipe failed with 38` (`pipe2` = ENOSYS) |
 | 1.21.13 | Fails: `runtime: epollcreate failed with 38` (`epoll_create1` = ENOSYS) |
 | 1.23.12 | Fails: `runtime: epollcreate failed with 38` |
-| 1.24+ | Officially requires Linux â‰¥ 3.2 |
+| 1.24+ | Officially requires Linux >= 3.2 |
 
 The decisive failures are missing syscalls, not CPU instructions. A newer
 binary cannot be patched around that at runtime.
 
 Release requirements, from the upstream `go.mod` files:
 
-- v1.28.0 (March 2023) â€” `go 1.18`
-- v1.30.2 â€” `go 1.19` (would need `pipe2`, which this kernel lacks)
+- v1.28.0 (March 2023) -- `go 1.18`
+- v1.30.2 -- `go 1.19` (would need `pipe2`, which this kernel lacks)
 
 Therefore **v1.28.0 is the newest unmodified upstream release that can run
 here**. Building a newer release with Go 1.18 is not supported by upstream and
@@ -192,28 +192,28 @@ ISA-compatible here).
 
 ```
 /mnt/us/extensions/tailscale/
-â”œâ”€â”€ bin/
-â”‚   â”œâ”€â”€ tailscaled              # 14.9 MB, ARMv6
-â”‚   â””â”€â”€ tailscale               #  8.8 MB, ARMv6
-â”œâ”€â”€ scripts/
-â”‚   â”œâ”€â”€ start.sh  stop.sh  status.sh
-â”‚   â”œâ”€â”€ login.sh  logs.sh  stats.sh
-â”‚   â”œâ”€â”€ kual-start.sh  kual-stop.sh  kual-status.sh
-â”‚   â”œâ”€â”€ kual-login.sh  kual-logs.sh
-â”‚   â”œâ”€â”€ socks-test.py  test-http.sh  test-restart.sh
-â”‚   â”œâ”€â”€ loadtest.sh  probe-ports.sh
-â”‚   â”œâ”€â”€ migrate-state.sh        # one-time, already applied
-â”‚   â”œâ”€â”€ rollback.sh
-â”‚   â””â”€â”€ uninstall.sh
-â”œâ”€â”€ logs/
-â”‚   â”œâ”€â”€ tailscaled.log
-â”‚   â””â”€â”€ auth.log
-â”œâ”€â”€ run/tailscaled.pid
-â”œâ”€â”€ config.xml                  # KUAL
-â””â”€â”€ menu.json                   # KUAL
++-- bin/
+|   +-- tailscaled              # 14.9 MB, ARMv6
+|   \-- tailscale               #  8.8 MB, ARMv6
++-- scripts/
+|   +-- start.sh  stop.sh  status.sh
+|   +-- login.sh  logs.sh  stats.sh
+|   +-- kual-start.sh  kual-stop.sh  kual-status.sh
+|   +-- kual-login.sh  kual-logs.sh
+|   +-- socks-test.py  test-http.sh  test-restart.sh
+|   +-- loadtest.sh  probe-ports.sh
+|   +-- migrate-state.sh        # one-time, already applied
+|   +-- rollback.sh
+|   \-- uninstall.sh
++-- logs/
+|   +-- tailscaled.log
+|   \-- auth.log
++-- run/tailscaled.pid
++-- config.xml                  # KUAL
+\-- menu.json                   # KUAL
 
 /var/local/tailscale/           # ext3, mode 0700
-â””â”€â”€ tailscaled.state            # mode 0600, node key
+\-- tailscaled.state            # mode 0600, node key
 ```
 
 Two location choices are deliberate:
@@ -335,16 +335,16 @@ intended behavior; there is no proxy authentication.
 
 The extension appears as **Tailscale** in KUAL with:
 
-- **Start** / **Stop** â€” run the daemon, report on the bottom screen line.
-- **Status** â€” two lines: state + IP, peers online + proxy port. Full output is
+- **Start** / **Stop** -- run the daemon, report on the bottom screen line.
+- **Status** -- two lines: state + IP, peers online + proxy port. Full output is
   saved to `logs/kual-status.txt`.
-- **Login / Show URL** â€” starts the interactive flow and prints the login URL
+- **Login / Show URL** -- starts the interactive flow and prints the login URL
   on screen.
-- **View Log** â€” last 30 lines full-screen for 20 seconds.
+- **View Log** -- last 30 lines full-screen for 20 seconds.
 
 The menu uses the same `config.xml` + `menu.json` schema as the other
 extensions on this device (KUAL v2, `KUAL-KDK-1.0.azw2`). Screen output uses
-`/usr/sbin/eips` at 50 columns Ã— 40 lines (600Ã—800, 12Ã—20 glyphs). Rendering was
+`/usr/sbin/eips` at 50 columns x 40 lines (600x800, 12x20 glyphs). Rendering was
 verified by dumping `/dev/fb0` and converting it (`tools/fb2png.ps1`,
 `diag/fb-status.png`).
 
@@ -372,14 +372,14 @@ not require re-authentication.
 
 Flag rationale:
 
-- `--accept-dns=false` â€” the <PEER_8>'s resolver is left untouched (MagicDNS
+- `--accept-dns=false` -- the <PEER_8>'s resolver is left untouched (MagicDNS
   names still resolve through the SOCKS5 proxy's remote DNS).
-- `--accept-routes=false` â€” no subnet routes; there is no TUN to install them.
-- `--host-routes=true` â€” **required** in userspace mode. Setting it to false
+- `--accept-routes=false` -- no subnet routes; there is no TUN to install them.
+- `--host-routes=true` -- **required** in userspace mode. Setting it to false
   strips peer IPs from the WireGuard config and breaks SOCKS5.
-- `--netfilter-mode=off` â€” there is no TUN and no NAT to manage; avoids
+- `--netfilter-mode=off` -- there is no TUN and no NAT to manage; avoids
   touching iptables.
-- `--port=0` (start.sh) â€” random source port for NAT traversal.
+- `--port=0` (start.sh) -- random source port for NAT traversal.
 
 State is a single file, `tailscaled.state`, mode `0600`, directory `0700`, on
 ext3. Losing it means re-authentication; it is not backed up anywhere else.
@@ -397,10 +397,10 @@ All numbers from the actual device, October 2026.
 | --- | --- |
 | CPU (120 s sample) | 0.125 % (15 ticks / 120 s, `--verbose=0`) |
 | RSS after restart | 15.6 MB |
-| RSS after a 16 MB transfer | 27â€“29 MB (buffers, then drops back) |
-| Threads | 6â€“8 |
+| RSS after a 16 MB transfer | 27-29 MB (buffers, then drops back) |
+| Threads | 6-8 |
 | VmSize | ~810 MB virtual (Go reserves address space; not resident) |
-| `--verbose=1` | 2.77 % idle CPU â€” do not use in production |
+| `--verbose=1` | 2.77 % idle CPU -- do not use in production |
 
 Context-switch counters (`voluntary` 328, `nonvoluntary` 1512) did not advance
 during a 60 s idle sample. On this vendor RT kernel these counters appear not
@@ -436,12 +436,12 @@ Verified application traffic:
 
 - SOCKS5 to `<PEER_B_IP>:22`, `<PEER_A_IP>:445`
 - SOCKS5 with MagicDNS: `peer-a:445`, `peer-b:22`
-- HTTP proxy to `http://<PEER_A_IP>:18080/` â†’ `200 OK`, body `<PEER_8>TailOK`
-- HTTP proxy with MagicDNS: `http://peer-a:18080/` â†’ `200 OK`
+- HTTP proxy to `http://<PEER_A_IP>:18080/` -> `200 OK`, body `<PEER_8>TailOK`
+- HTTP proxy with MagicDNS: `http://peer-a:18080/` -> `200 OK`
 
 Inbound path: a Python listener on the <PEER_8> (`0.0.0.0:18099`) accepted a
 connection to `<TAILSCALE_IP>:18099`, sent `HELLO-FROM-KINDLE`, and logged the
-peer as `127.0.0.1` â€” the netstack forwards inbound TCP to loopback. The
+peer as `127.0.0.1` -- the netstack forwards inbound TCP to loopback. The
 <PEER_8>'s SSH server likewise answered on `<TAILSCALE_IP>:22`.
 
 A daemon that is merely running is not a connected node. These checks confirm
@@ -530,7 +530,7 @@ uninstaller re-execs itself from `/tmp` before deleting its own directory.
 | `bind: operation not permitted` on socket | Socket placed on `/mnt/us` (FUSE). Use `/tmp`. |
 | `x509: certificate ... not yet valid` | Clock is wrong. Run `ntpdate -u time.google.com`. |
 | SOCKS5 connects but no data | `--host-routes=false` was used. Set it to `true`. |
-| `runtime: epollcreate failed with 38` | Binary built with Go â‰¥ 1.21. Rebuild with 1.18.10. |
+| `runtime: epollcreate failed with 38` | Binary built with Go >= 1.21. Rebuild with 1.18.10. |
 | `runtime: pipe failed with 38` | Binary built with Go 1.19. Rebuild with 1.18.10. |
 | `Text file busy` when copying binaries | Daemon is running. Stop it, or install via `mv` (deploy.ps1 does). |
 | KUAL action does nothing | Check `logs/kual.log`; scripts set `PATH` explicitly. |
