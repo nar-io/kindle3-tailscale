@@ -1,0 +1,37 @@
+﻿ssh : 
+At line:1 char:38
++ ... hase1b.sh | ssh -o StrictHostKeyChecking=no root@<KINDLE_IP> "sh -s" ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Welcome to <PEER_8>!
+
+=== EXEC ===
+EXEC_MNT_US_OK
+EXEC_VARLOCAL_OK
+=== TUN_OPEN ===
+TUN_OPEN_FAILED errno=19 No such device
+=== PROBE_ELF ===
+=== PROBE_LDD ===
+sh: od: not found
+sh: ldd: not found
+=== PROBE_RUN2 ===
+Segmentation fault
+rc=139
+=== MEM ===
+             total       used       free     shared    buffers     cached
+Mem:        256536     225020      31516          0      58632      59120
+-/+ buffers/cache:     107268     149268
+Swap:            0          0          0
+=== PROC_NET_TUN ===
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+    lo:    3038      18    0    0    0     0          0         0     3038      18    0    0    0     0       0          0
+ wlan0:  230907    1380    0    0    0     0          0         0   123447     538    0    0    0     0       0          0
+  usb0:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+=== END ===
+sh: 
+: not found
+

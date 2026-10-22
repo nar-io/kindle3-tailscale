@@ -1,0 +1,366 @@
+﻿ssh : 
+At line:1 char:40
++ ... probes.sh | ssh -o StrictHostKeyChecking=no root@<KINDLE_IP> "sh -s" ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Welcome to <PEER_8>!
+
+############ GO 1.17.13 ############
+PROBE_START go=go1.17.13 os=linux arch=arm cpus=1
+GOROUTINE=42
+FILE_OK
+LISTEN_OK addr=127.0.0.1:39753
+TCP_ECHO="ping" err=<nil>
+DNS err=<nil> ips=[192.200.0.109 192.200.0.104 192.200.0.114 192.200.0.112 192.200.0.106 192.200.0.103 192.200.0.108 192.200.0.101 2606:b740:49::105 2606:b740:49::104 2606:b740:49::116 2606:b740:49::107 2606:b740:49::108 2606:b740:49::112 2606:b740:49::106 2606:b740:49::102] dur=131.89375ms
+TLS_ERR=x509: certificate has expired or is not yet valid: current time 2024-07-19T16:35:56+03:00 is before 2026-10-02T04:46:35Z dur=1.09951925s
+PROBE_DONE
+RC=0
+############ GO 1.19.13 ############
+PROBE_START go=go1.19.13 os=linux arch=arm cpus=1
+runtime: pipe failed with 38
+fatal error: runtime: pipe failed
+
+runtime stack:
+runtime.throw({0x213810, 0x14})
+	runtime/panic.go:1047 +0x4c fp=0xbea13d28 sp=0xbea13d14 pc=0x49758
+runtime.netpollinit()
+	runtime/netpoll_epoll.go:45 +0x184 fp=0xbea13d64 sp=0xbea13d28 pc=0x44ce8
+runtime.netpollGenericInit()
+	runtime/netpoll.go:196 +0x4c fp=0xbea13d70 sp=0xbea13d64 pc=0x4415c
+runtime.doaddtimer(0x41a000, 0x444060)
+	runtime/time.go:293 +0x24 fp=0xbea13da0 sp=0xbea13d70 pc=0x6ae90
+runtime.modtimer(0x444060, 0x101df0b15ee, 0x0, 0x21ef70, {0x1ebc50, 0x402960}, 0x0)
+	runtime/time.go:507 +0x468 fp=0xbea13dd0 sp=0xbea13da0 pc=0x6bc78
+runtime.resettimer(...)
+	runtime/time.go:554
+runtime.resetForSleep(0x402960, 0x444060)
+	runtime/time.go:204 +0x5c fp=0xbea13dfc sp=0xbea13dd0 pc=0x6ac44
+runtime.park_m(0x402960)
+	runtime/proc.go:3353 +0xac fp=0xbea13e10 sp=0xbea13dfc pc=0x54210
+runtime.mcall()
+	runtime/asm_arm.s:265 +0x48 fp=0xbea13e18 sp=0xbea13e10 pc=0x79d00
+
+goroutine 1 [chan receive]:
+runtime.gopark(0x21ef0c, 0x4421f0, 0xe, 0x17, 0x2)
+	runtime/proc.go:363 +0x100 fp=0x467d20 sp=0x467d0c pc=0x4ca84
+runtime.chanrecv(0x4421c0, 0x467e00, 0x1)
+	runtime/chan.go:583 +0x530 fp=0x467d6c sp=0x467d20 pc=0x15c00
+runtime.chanrecv1(0x4421c0, 0x467e00)
+	runtime/chan.go:442 +0x20 fp=0x467d80 sp=0x467d6c pc=0x156cc
+main.main()
+	probe/main.go:22 +0x15c fp=0x467fc0 sp=0x467d80 pc=0x1d3b30
+runtime.main()
+	runtime/proc.go:250 +0x26c fp=0x467fec sp=0x467fc0 pc=0x4c5bc
+runtime.goexit()
+	runtime/asm_arm.s:831 +0x4 fp=0x467fec sp=0x467fec pc=0x7b89c
+
+goroutine 2 [force gc (idle)]:
+runtime.gopark(0x21efe0, 0x36b1d8, 0x11, 0x14, 0x1)
+	runtime/proc.go:363 +0x100 fp=0x424fd8 sp=0x424fc4 pc=0x4ca84
+runtime.goparkunlock(...)
+	runtime/proc.go:369
+runtime.forcegchelper()
+	runtime/proc.go:302 +0xc4 fp=0x424fec sp=0x424fd8 pc=0x4c8e8
+runtime.goexit()
+	runtime/asm_arm.s:831 +0x4 fp=0x424fec sp=0x424fec pc=0x7b89c
+created by runtime.init.5
+	runtime/proc.go:290 +0x1c
+
+goroutine 3 [GC sweep wait]:
+runtime.gopark(0x21efe0, 0x36b318, 0xc, 0x14, 0x1)
+	runtime/proc.go:363 +0x100 fp=0x4257d0 sp=0x4257bc pc=0x4ca84
+runtime.goparkunlock(...)
+	runtime/proc.go:369
+runtime.bgsweep(0x442000)
+	runtime/mgcsweep.go:278 +0x94 fp=0x4257e4 sp=0x4257d0 pc=0x37144
+runtime.gcenable.func1()
+	runtime/mgc.go:178 +0x28 fp=0x4257ec sp=0x4257e4 pc=0x27ae8
+runtime.goexit()
+	runtime/asm_arm.s:831 +0x4 fp=0x4257ec sp=0x4257ec pc=0x7b89c
+created by runtime.gcenable
+	runtime/mgc.go:178 +0x74
+
+goroutine 4 [GC scavenge wait]:
+runtime.gopark(0x21efe0, 0x36b438, 0xd, 0x14, 0x2)
+	runtime/proc.go:363 +0x100 fp=0x425fb4 sp=0x425fa0 pc=0x4ca84
+runtime.goparkunlock(...)
+	runtime/proc.go:369
+runtime.(*scavengerState).park(0x36b438)
+	runtime/mgcscavenge.go:389 +0x64 fp=0x425fc8 sp=0x425fb4 pc=0x34bd4
+runtime.bgscavenge(0x442000)
+	runtime/mgcscavenge.go:617 +0x3c fp=0x425fe4 sp=0x425fc8 pc=0x35300
+runtime.gcenable.func2()
+	runtime/mgc.go:179 +0x28 fp=0x425fec sp=0x425fe4 pc=0x27a94
+runtime.goexit()
+	runtime/asm_arm.s:831 +0x4 fp=0x425fec sp=0x425fec pc=0x7b89c
+created by runtime.gcenable
+	runtime/mgc.go:179 +0xbc
+
+goroutine 5 [finalizer wait]:
+runtime.gopark(0x21efe0, 0x37ccd4, 0x10, 0x14, 0x1)
+	runtime/proc.go:363 +0x100 fp=0x42478c sp=0x424778 pc=0x4ca84
+runtime.goparkunlock(...)
+	runtime/proc.go:369
+runtime.runfinq()
+	runtime/mfinal.go:180 +0x108 fp=0x4247ec sp=0x42478c pc=0x26b28
+runtime.goexit()
+	runtime/asm_arm.s:831 +0x4 fp=0x4247ec sp=0x4247ec pc=0x7b89c
+created by runtime.createfing
+	runtime/mfinal.go:157 +0x54
+
+goroutine 6 [sleep]:
+runtime.gopark(0x21effc, 0x444060, 0x13, 0x13, 0x1)
+	runtime/proc.go:363 +0x100 fp=0x4267c0 sp=0x4267ac pc=0x4ca84
+time.Sleep(0x1312d00)
+	runtime/time.go:195 +0x170 fp=0x4267dc sp=0x4267c0 pc=0x7998c
+main.main.func1()
+	probe/main.go:19 +0x2c fp=0x4267ec sp=0x4267dc pc=0x1d4774
+runtime.goexit()
+	runtime/asm_arm.s:831 +0x4 fp=0x4267ec sp=0x4267ec pc=0x7b89c
+created by main.main
+	probe/main.go:18 +0x140
+RC=2
+############ GO 1.21.13 ############
+PROBE_START go=go1.21.13 os=linux arch=arm cpus=1
+runtime: epollcreate failed with 38
+fatal error: runtime: netpollinit failed
+
+runtime stack:
+runtime.throw({0x23be5d, 0x1b})
+	runtime/panic.go:1077 +0x4c fp=0xbed7ed14 sp=0xbed7ed00 pc=0x4d38c
+runtime.netpollinit()
+	runtime/netpoll_epoll.go:28 +0x1e8 fp=0xbed7ed64 sp=0xbed7ed14 pc=0x48968
+runtime.netpollGenericInit()
+	runtime/netpoll.go:216 +0x58 fp=0xbed7ed70 sp=0xbed7ed64 pc=0x47ce4
+runtime.doaddtimer(0x41a000, 0x444030)
+	runtime/time.go:294 +0x2c fp=0xbed7ed9c sp=0xbed7ed70 pc=0x705cc
+runtime.modtimer(0x444030, 0x101e590dc55, 0x0, 0x24646c, {0x2160d8, 0x402c00}, 0x0)
+	runtime/time.go:508 +0x494 fp=0xbed7edc8 sp=0xbed7ed9c pc=0x71310
+runtime.resettimer(...)
+	runtime/time.go:555
+runtime.resetForSleep(0x402c00, 0x444030)
+	runtime/time.go:204 +0x5c fp=0xbed7edf4 sp=0xbed7edc8 pc=0x702f4
+runtime.park_m(0x402c00)
+	runtime/proc.go:3729 +0xbc fp=0xbed7ee10 sp=0xbed7edf4 pc=0x584dc
+runtime.mcall()
+	runtime/asm_arm.s:265 +0x48 fp=0xbed7ee18 sp=0xbed7ee10 pc=0x82080
+
+goroutine 1 [chan receive]:
+runtime.gopark(0x2463fc, 0x442130, 0xe, 0x17, 0x2)
+	runtime/proc.go:398 +0x104 fp=0x460d08 sp=0x460cf4 pc=0x50970
+runtime.chanrecv(0x442100, 0x460dd8, 0x1)
+	runtime/chan.go:583 +0x4c4 fp=0x460d44 sp=0x460d08 pc=0x16404
+runtime.chanrecv1(0x442100, 0x460dd8)
+	runtime/chan.go:442 +0x20 fp=0x460d58 sp=0x460d44 pc=0x15f3c
+main.main()
+	probe/main.go:22 +0x150 fp=0x460fa0 sp=0x460d58 pc=0x1f048c
+runtime.main()
+	runtime/proc.go:267 +0x338 fp=0x460fec sp=0x460fa0 pc=0x503d8
+runtime.goexit()
+	runtime/asm_arm.s:859 +0x4 fp=0x460fec sp=0x460fec pc=0x83c1c
+
+goroutine 2 [force gc (idle)]:
+runtime.gopark(0x246574, 0x38dd70, 0x11, 0x14, 0x1)
+	runtime/proc.go:398 +0x104 fp=0x424fd4 sp=0x424fc0 pc=0x50970
+runtime.goparkunlock(...)
+	runtime/proc.go:404
+runtime.forcegchelper()
+	runtime/proc.go:322 +0xe4 fp=0x424fec sp=0x424fd4 pc=0x507ac
+runtime.goexit()
+	runtime/asm_arm.s:859 +0x4 fp=0x424fec sp=0x424fec pc=0x83c1c
+created by runtime.init.5 in goroutine 1
+	runtime/proc.go:310 +0x1c
+
+goroutine 3 [GC sweep wait]:
+runtime.gopark(0x246574, 0x38df58, 0xc, 0x14, 0x1)
+	runtime/proc.go:398 +0x104 fp=0x4257c4 sp=0x4257b0 pc=0x50970
+runtime.goparkunlock(...)
+	runtime/proc.go:404
+runtime.bgsweep(0x442000)
+	runtime/mgcsweep.go:280 +0xa8 fp=0x4257e4 sp=0x4257c4 pc=0x3a04c
+runtime.gcenable.func1()
+	runtime/mgc.go:200 +0x28 fp=0x4257ec sp=0x4257e4 pc=0x2a96c
+runtime.goexit()
+	runtime/asm_arm.s:859 +0x4 fp=0x4257ec sp=0x4257ec pc=0x83c1c
+created by runtime.gcenable in goroutine 1
+	runtime/mgc.go:200 +0x74
+
+goroutine 4 [GC scavenge wait]:
+runtime.gopark(0x246574, 0x38e090, 0xd, 0x14, 0x2)
+	runtime/proc.go:398 +0x104 fp=0x425fb4 sp=0x425fa0 pc=0x50970
+runtime.goparkunlock(...)
+	runtime/proc.go:404
+runtime.(*scavengerState).park(0x38e090)
+	runtime/mgcscavenge.go:425 +0x68 fp=0x425fc8 sp=0x425fb4 pc=0x372b0
+runtime.bgscavenge(0x442000)
+	runtime/mgcscavenge.go:653 +0x3c fp=0x425fe4 sp=0x425fc8 pc=0x379d0
+runtime.gcenable.func2()
+	runtime/mgc.go:201 +0x28 fp=0x425fec sp=0x425fe4 pc=0x2a918
+runtime.goexit()
+	runtime/asm_arm.s:859 +0x4 fp=0x425fec sp=0x425fec pc=0x83c1c
+created by runtime.gcenable in goroutine 1
+	runtime/mgc.go:201 +0xbc
+
+goroutine 5 [finalizer wait]:
+runtime.gopark(0x246418, 0x39e854, 0x10, 0x14, 0x1)
+	runtime/proc.go:398 +0x104 fp=0x42678c sp=0x426778 pc=0x50970
+runtime.runfinq()
+	runtime/mfinal.go:193 +0x110 fp=0x4267ec sp=0x42678c pc=0x29794
+runtime.goexit()
+	runtime/asm_arm.s:859 +0x4 fp=0x4267ec sp=0x4267ec pc=0x83c1c
+created by runtime.createfing in goroutine 1
+	runtime/mfinal.go:163 +0x5c
+
+goroutine 6 [sleep]:
+runtime.gopark(0x246594, 0x444030, 0x13, 0x13, 0x1)
+	runtime/proc.go:398 +0x104 fp=0x4247c0 sp=0x4247ac pc=0x50970
+time.Sleep(0x1312d00)
+	runtime/time.go:195 +0x16c fp=0x4247dc sp=0x4247c0 pc=0x81cb4
+main.main.func1()
+	probe/main.go:19 +0x2c fp=0x4247ec sp=0x4247dc pc=0x1f10c0
+runtime.goexit()
+	runtime/asm_arm.s:859 +0x4 fp=0x4247ec sp=0x4247ec pc=0x83c1c
+created by main.main in goroutine 1
+	probe/main.go:18 +0x134
+RC=2
+############ GO 1.23.12 ############
+runtime: epollcreate failed with 38
+fatal error: runtime: netpollinit failed
+
+goroutine 1 gp=0x802128 m=0 mp=0x3cfe48 [running, locked to thread]:
+runtime.throw({0x264f70, 0x1b})
+	runtime/panic.go:1073 +0x34 fp=0x854cc0 sp=0x854cac pc=0x86e44
+runtime.netpollinit()
+	runtime/netpoll_epoll.go:26 +0x1f8 fp=0x854d08 sp=0x854cc0 pc=0x461d0
+runtime.netpollGenericInit()
+	runtime/netpoll.go:224 +0x58 fp=0x854d14 sp=0x854d08 pc=0x45478
+internal/poll.runtime_pollServerInit()
+	runtime/netpoll.go:215 +0x14 fp=0x854d18 sp=0x854d14 pc=0x85cf4
+sync.(*Once).doSlow(0x3d9b28, 0x2702c0)
+	sync/once.go:76 +0xa8 fp=0x854d44 sp=0x854d18 pc=0xa2040
+sync.(*Once).Do(0x3d9b28, 0x2702c0)
+	sync/once.go:67 +0x40 fp=0x854d50 sp=0x854d44 pc=0xa1f88
+internal/poll.(*pollDesc).init(0x812218, 0x812200)
+	internal/poll/fd_poll_runtime.go:39 +0x24 fp=0x854d60 sp=0x854d50 pc=0x129408
+internal/poll.(*FD).Init(0x812200, {0x25f001, 0x4}, 0x1)
+	internal/poll/fd_unix.go:66 +0x7c fp=0x854d74 sp=0x854d60 pc=0x129b94
+os.newFile(0x3, {0x261606, 0xf}, 0x1, 0x0)
+	os/file_unix.go:237 +0x194 fp=0x854d98 sp=0x854d74 pc=0x130260
+os.openFileNolog({0x261606, 0xf}, 0x0, 0x0)
+	os/file_unix.go:297 +0x188 fp=0x854de4 sp=0x854d98 pc=0x13049c
+os.OpenFile({0x261606, 0xf}, 0x0, 0x0)
+	os/file.go:385 +0x48 fp=0x854e04 sp=0x854de4 pc=0x12f0ac
+os.Open(...)
+	os/file.go:365
+os.ReadFile({0x261606, 0xf})
+	os/file.go:784 +0x64 fp=0x854e58 sp=0x854e04 pc=0x12f5a0
+vendor/golang.org/x/sys/cpu.readHWCAP()
+	vendor/golang.org/x/sys/cpu/hwcap_linux.go:42 +0x60 fp=0x854e78 sp=0x854e58 pc=0x1d51ac
+vendor/golang.org/x/sys/cpu.archInit()
+	vendor/golang.org/x/sys/cpu/cpu_linux.go:10 +0x14 fp=0x854e84 sp=0x854e78 pc=0x1d4d38
+vendor/golang.org/x/sys/cpu.init.0()
+	vendor/golang.org/x/sys/cpu/cpu.go:203 +0x14 fp=0x854e88 sp=0x854e84 pc=0x1d43cc
+runtime.doInit1(0x3c0728)
+	runtime/proc.go:7348 +0xd4 fp=0x854fa8 sp=0x854e88 pc=0x5db54
+runtime.doInit(...)
+	runtime/proc.go:7315
+runtime.main()
+	runtime/proc.go:254 +0x3ec fp=0x854fec sp=0x854fa8 pc=0x4d264
+runtime.goexit({})
+	runtime/asm_arm.s:884 +0x4 fp=0x854fec sp=0x854fec pc=0x8d9a4
+
+goroutine 2 gp=0x8026c8 m=nil [force gc (idle)]:
+runtime.gopark(0x270168, 0x3cf140, 0x11, 0xa, 0x1)
+	runtime/proc.go:424 +0x104 fp=0x82efd4 sp=0x82efc0 pc=0x86f54
+runtime.goparkunlock(...)
+	runtime/proc.go:430
+runtime.forcegchelper()
+	runtime/proc.go:337 +0xe4 fp=0x82efec sp=0x82efd4 pc=0x4d5d0
+runtime.goexit({})
+	runtime/asm_arm.s:884 +0x4 fp=0x82efec sp=0x82efec pc=0x8d9a4
+created by runtime.init.6 in goroutine 1
+	runtime/proc.go:325 +0x1c
+
+goroutine 3 gp=0x8027e8 m=nil [GC sweep wait]:
+runtime.gopark(0x270168, 0x3cf2c8, 0xc, 0x9, 0x1)
+	runtime/proc.go:424 +0x104 fp=0x82f7c4 sp=0x82f7b0 pc=0x86f54
+runtime.goparkunlock(...)
+	runtime/proc.go:430
+runtime.bgsweep(0x84c000)
+	runtime/mgcsweep.go:277 +0xa8 fp=0x82f7e4 sp=0x82f7c4 pc=0x36840
+runtime.gcenable.gowrap1()
+	runtime/mgc.go:204 +0x28 fp=0x82f7ec sp=0x82f7e4 pc=0x268e0
+runtime.goexit({})
+	runtime/asm_arm.s:884 +0x4 fp=0x82f7ec sp=0x82f7ec pc=0x8d9a4
+created by runtime.gcenable in goroutine 1
+	runtime/mgc.go:204 +0x74
+
+goroutine 4 gp=0x802908 m=nil [GC scavenge wait]:
+runtime.gopark(0x270168, 0x3cf4d8, 0xd, 0xa, 0x2)
+	runtime/proc.go:424 +0x104 fp=0x82ffb4 sp=0x82ffa0 pc=0x86f54
+runtime.goparkunlock(...)
+	runtime/proc.go:430
+runtime.(*scavengerState).park(0x3cf4d8)
+	runtime/mgcscavenge.go:425 +0x68 fp=0x82ffc8 sp=0x82ffb4 pc=0x33be4
+runtime.bgscavenge(0x84c000)
+	runtime/mgcscavenge.go:653 +0x3c fp=0x82ffe4 sp=0x82ffc8 pc=0x342f0
+runtime.gcenable.gowrap2()
+	runtime/mgc.go:205 +0x28 fp=0x82ffec sp=0x82ffe4 pc=0x2688c
+runtime.goexit({})
+	runtime/asm_arm.s:884 +0x4 fp=0x82ffec sp=0x82ffec pc=0x8d9a4
+created by runtime.gcenable in goroutine 1
+	runtime/mgc.go:205 +0xbc
+
+goroutine 5 gp=0x802a28 m=nil [runnable]:
+runtime.runfinq()
+	runtime/mfinal.go:176 fp=0x82e7ec sp=0x82e7ec pc=0x255f0
+runtime.goexit({})
+	runtime/asm_arm.s:884 +0x4 fp=0x82e7ec sp=0x82e7ec pc=0x8d9a4
+created by runtime.createfing in goroutine 1
+	runtime/mfinal.go:163 +0x5c
+
+goroutine 6 gp=0x802c68 m=nil [runnable]:
+runtime.unique_runtime_registerUniqueMapCleanup.gowrap1()
+	runtime/mgc.go:1780 fp=0x8307ec sp=0x8307ec pc=0x2a64c
+runtime.goexit({})
+	runtime/asm_arm.s:884 +0x4 fp=0x8307ec sp=0x8307ec pc=0x8d9a4
+created by unique.runtime_registerUniqueMapCleanup in goroutine 1
+	runtime/mgc.go:1780 +0xa4
+RC=2
+############ DMESG TAIL ############
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=4,x2=596,y1=44,y2=68
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=68,x2=532,y1=72,y2=768
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=4,x2=596,y1=44,y2=68
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=68,x2=532,y1=72,y2=768
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=4,x2=596,y1=44,y2=796
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=68,x2=532,y1=72,y2=768
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=4,x2=596,y1=772,y2=796
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=4,x2=596,y1=44,y2=68
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=68,x2=532,y1=72,y2=768
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=4,x2=596,y1=44,y2=68
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=68,x2=532,y1=72,y2=768
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=4,x2=596,y1=44,y2=68
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=68,x2=532,y1=72,y2=768
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=4,x2=596,y1=44,y2=68
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=68,x2=532,y1=72,y2=768
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=4,x2=596,y1=44,y2=796
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=4,x2=596,y1=44,y2=68
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=68,x2=532,y1=72,y2=768
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=4,x2=596,y1=44,y2=68
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=68,x2=532,y1=72,y2=768
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=4,x2=596,y1=44,y2=68
+eink_fb: W einkfb_print_buffers_equal_message:def:area_update(non-flashing):x1=68,x2=532,y1=72,y2=768
+unregistered gadget driver 'g_file_storage'
+usb0: Ethernet Gadget, version: May Day 2005
+usb0: using fsl-usb2-udc, OUT ep1out IN ep1in STATUS ep2in
+usb0: MAC ee:19:00:00:00:00
+usb0: HOST MAC ee:49:00:00:00:00
+usb0: RNDIS ready
+fsl-usb2-udc: bind to driver ether 
+eink_fb: I bs_cmd_ld_img_upd_data_which:def:temp=26C:from pmic
+sh: 
+: not found
+

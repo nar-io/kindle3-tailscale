@@ -1,0 +1,288 @@
+﻿ssh : 
+At line:1 char:36
++ ... \diag2.sh | ssh -o StrictHostKeyChecking=no root@<KINDLE_IP> "sh -s" ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Welcome to <PEER_8>!
+
+=== DATE_EPOCH ===
+1721395498
+=== NTPS ===
+ls: /usr/sbin/ntpdate: No such file or directory
+-rwxr-xr-x    1 root     root        54608 Nov 25  2016 /usr/bin/ntpdate
+=== KCONFIG_RELEVANT ===
+# CONFIG_CGROUPS is not set
+# CONFIG_NAMESPACES is not set
+CONFIG_FUTEX=y
+CONFIG_EPOLL=y
+CONFIG_TIMERFD=y
+CONFIG_EVENTFD=y
+CONFIG_ARM_THUMB=y
+CONFIG_PREEMPT_NONE=y
+# CONFIG_PREEMPT_VOLUNTARY is not set
+# CONFIG_PREEMPT_DESKTOP is not set
+# CONFIG_PREEMPT_RT is not set
+# CONFIG_PREEMPT_SOFTIRQS is not set
+# CONFIG_PREEMPT_HARDIRQS is not set
+CONFIG_HZ=100
+CONFIG_VFP=y
+CONFIG_PACKET=y
+CONFIG_PACKET_MMAP=y
+CONFIG_UNIX=y
+# CONFIG_IP_ADVANCED_ROUTER is not set
+CONFIG_INET_DIAG=y
+# CONFIG_TCP_CONG_ADVANCED is not set
+CONFIG_TCP_CONG_CUBIC=y
+# CONFIG_IPV6 is not set
+CONFIG_NETFILTER=y
+# CONFIG_NETFILTER_DEBUG is not set
+CONFIG_NETFILTER_ADVANCED=y
+# CONFIG_NETFILTER_NETLINK_QUEUE is not set
+# CONFIG_NETFILTER_NETLINK_LOG is not set
+CONFIG_NETFILTER_XTABLES=y
+# CONFIG_NETFILTER_XT_TARGET_CLASSIFY is not set
+# CONFIG_NETFILTER_XT_TARGET_MARK is not set
+# CONFIG_NETFILTER_XT_TARGET_NFQUEUE is not set
+# CONFIG_NETFILTER_XT_TARGET_NFLOG is not set
+# CONFIG_NETFILTER_XT_TARGET_RATEEST is not set
+# CONFIG_NETFILTER_XT_TARGET_TCPMSS is not set
+# CONFIG_NETFILTER_XT_MATCH_COMMENT is not set
+# CONFIG_NETFILTER_XT_MATCH_CONNBYTES is not set
+# CONFIG_NETFILTER_XT_MATCH_CONNLIMIT is not set
+# CONFIG_NETFILTER_XT_MATCH_CONNMARK is not set
+CONFIG_NETFILTER_XT_MATCH_CONNTRACK=y
+# CONFIG_NETFILTER_XT_MATCH_DCCP is not set
+# CONFIG_NETFILTER_XT_MATCH_DSCP is not set
+# CONFIG_NETFILTER_XT_MATCH_ESP is not set
+# CONFIG_NETFILTER_XT_MATCH_HELPER is not set
+CONFIG_NETFILTER_XT_MATCH_IPRANGE=y
+# CONFIG_NETFILTER_XT_MATCH_LENGTH is not set
+# CONFIG_NETFILTER_XT_MATCH_LIMIT is not set
+CONFIG_NETFILTER_XT_MATCH_MAC=y
+# CONFIG_NETFILTER_XT_MATCH_MARK is not set
+# CONFIG_NETFILTER_XT_MATCH_OWNER is not set
+# CONFIG_NETFILTER_XT_MATCH_POLICY is not set
+# CONFIG_NETFILTER_XT_MATCH_MULTIPORT is not set
+# CONFIG_NETFILTER_XT_MATCH_PKTTYPE is not set
+# CONFIG_NETFILTER_XT_MATCH_QUOTA is not set
+# CONFIG_NETFILTER_XT_MATCH_RATEEST is not set
+# CONFIG_NETFILTER_XT_MATCH_REALM is not set
+# CONFIG_NETFILTER_XT_MATCH_SCTP is not set
+CONFIG_NETFILTER_XT_MATCH_STATE=y
+# CONFIG_NETFILTER_XT_MATCH_STATISTIC is not set
+# CONFIG_NETFILTER_XT_MATCH_STRING is not set
+# CONFIG_NETFILTER_XT_MATCH_TCPMSS is not set
+# CONFIG_NETFILTER_XT_MATCH_TIME is not set
+# CONFIG_NETFILTER_XT_MATCH_U32 is not set
+# CONFIG_NETFILTER_XT_MATCH_HASHLIMIT is not set
+# CONFIG_BRIDGE is not set
+# CONFIG_VLAN_8021Q is not set
+# CONFIG_DUMMY is not set
+# CONFIG_TUN is not set
+# CONFIG_VETH is not set
+CONFIG_UNIX98_PTYS=y
+CONFIG_INOTIFY=y
+CONFIG_INOTIFY_USER=y
+=== PROBE_FILES ===
+-rwxr-xr-x    1 root     root          132 Jul 19  2024 /mnt/us/aarch64_probe
+-rwxr-xr-x    1 root     root       704284 Jul 19  2024 /mnt/us/armv6_probe
+--- armv6_probe strings ---
+<malloc version="1">
+ELF file version does not match current one
+ELF file version ident does not match current one
+ELF file ABI version invalid
+, version 
+version == NULL || !(flags & DL_LOOKUP_RETURN_NEWEST)
+unsupported version %s of Verneed record
+dl-version.c
+--- run armv6_probe ---
+Segmentation fault
+exit=0
+=== EXEC_TEST_MNT_US ===
+.exec_test: applet not found
+=== EXEC_TEST_TMP ===
+.exec_test: applet not found
+=== EXEC_TEST_VARLOCAL ===
+.exec_test: applet not found
+=== INTERNET ===
+ping: invalid option -- W
+BusyBox v1.7.2 (2019-05-30 09:57:42 UTC) multi-call binary
+
+Usage: ping [OPTION]... host
+
+Send ICMP ECHO_REQUEST packets to network hosts
+
+Options:
+	-4, -6		Force IPv4 or IPv6 hostname resolution
+	-c CNT		Send only CNT pings
+	-s SIZE		Send SIZE data bytes in packets (default=56)
+	-I iface/IP	Use interface or IP address as source
+	-q		Quiet, only displays output at start
+			and when finished
+
+wget: invalid option -- T
+BusyBox v1.7.2 (2019-05-30 09:57:42 UTC) multi-call binary
+
+Usage: wget [-c|--continue] [-s|--spider] [-q|--quiet] [-O|--output-document file]
+		[--header 'header: value'] [-Y|--proxy on/off] [-P DIR]
+		[-U|--user-agent agent] url
+
+Retrieve files via HTTP or FTP
+
+Options:
+	-s	Spider mode - only check file existence
+	-c	Continue retrieval of aborted transfer
+	-q	Quiet
+	-P	Set directory prefix to DIR
+	-O	Save to filename ('-' for stdout)
+	-U	Adjust 'User-Agent' field
+	-Y	Use proxy ('on' or 'off')
+
+wget_http_exit=1
+ls: /tmp/.ts_home: No such file or directory
+wget: invalid option -- T
+BusyBox v1.7.2 (2019-05-30 09:57:42 UTC) multi-call binary
+
+Usage: wget [-c|--continue] [-s|--spider] [-q|--quiet] [-O|--output-document file]
+		[--header 'header: value'] [-Y|--proxy on/off] [-P DIR]
+		[-U|--user-agent agent] url
+
+Retrieve files via HTTP or FTP
+
+Options:
+	-s	Spider mode - only check file existence
+	-c	Continue retrieval of aborted transfer
+	-q	Quiet
+	-P	Set directory prefix to DIR
+	-O	Save to filename ('-' for stdout)
+	-U	Adjust 'User-Agent' field
+	-Y	Use proxy ('on' or 'off')
+
+wget_cp_exit=1
+ls: /tmp/.ts_home2: No such file or directory
+=== DNS_RESOLVE ===
+Server:    1.1.1.1
+Address 1: 1.1.1.1 one.one.one.one
+
+Name:      controlplane.tailscale.com
+Address 1: 192.200.0.104 lb.fra.tailscale.com
+Address 2: 192.200.0.115 lb.fra.tailscale.com
+Address 3: 192.200.0.109 lb.fra.tailscale.com
+Address 4: 192.200.0.110 lb.fra.tailscale.com
+Address 5: 192.200.0.114 lb.fra.tailscale.com
+Address 6: 192.200.0.113 lb.fra.tailscale.com
+Address 7: 192.200.0.102 lb.fra.tailscale.com
+Address 8: 192.200.0.111 lb.fra.tailscale.com
+Address 9: (null)
+Address 10: (null)
+Address 11: (null)
+Address 12: (null)
+Address 13: (null)
+Address 14: (null)
+Address 15: (null)
+Address 16: (null)
+=== TLS_TEST ===
+4952:error:1407742E:SSL routines:SSL23_GET_SERVER_HELLO:tlsv1 alert protocol version:s23_clnt.c:596:
+CONNECTED(00000003)
+=== PIP ===
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ImportError: No module named pip
+/usr/bin/python: No module named pip
+=== PY_SSL ===
+OpenSSL 1.1.1l  24 Aug 2021
+=== UDEV ===
+lrwxrwxrwx    1 root     root           32 Jan  1  1970 10-hw.rules -> /etc/udev/rules.d/XX-luigi.rules
+-rw-r--r--    1 root     root         3362 Apr 17  2011 50-udev.rules
+-rw-r--r--    1 root     root          968 Apr 17  2011 60-compat.rules
+-rw-r--r--    1 root     root         1102 Apr 17  2011 60-pcmcia.rules
+-rw-r--r--    1 root     root         4937 Apr 17  2011 70-devfs.rules
+-rw-r--r--    1 root     root         2440 Apr 17  2011 XX-luigi.rules
+=== MODULE_DIR ===
+/lib/modules/2.6.26-rt-lab126/kernel/lib/crc-ccitt.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/input/keyboard/mxc_keyb.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/input/fiveway/fiveway.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/input/volume/volume.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/input/misc/uinput.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/serial/usbserial.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/serial/option.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/mon/usbmon.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/host/ehci-hcd.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/gadget/g_file_storage.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/gadget/g_ether.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/gadget/g_serial.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/gadget/arcotg_udc.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/core/usbcore.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/wan/mwan.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/slhc.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/wireless/ath6k22.133/ar6000.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/ppp_async.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/ppp_generic.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/ppp_deflate.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/ppp_synctty.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/video/eink/hal/eink_fb_hal_auo.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/video/eink/hal/eink_fb_hal_emu.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/video/eink/hal/eink_fb_hal.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/video/eink/hal/eink_fb_hal_broads.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/video/eink/legacy/eink_fb_shim.ko
+/lib/modules/2.6.26-rt-lab126/kernel/fs/nls/nls_ascii.ko
+/lib/modules/2.6.26-rt-lab126/kernel/fs/nls/nls_utf8.ko
+/lib/modules/2.6.26-rt-lab126/kernel/fs/fuse/fuse.ko
+/lib/modules/2.6.26-rt-lab126/modules.pcimap
+=== KERNEL_EXTRAS ===
+drwxr-xr-x    5 root     root         1024 Feb 16  2013 kernel
+-rw-r--r--    1 root     root         5901 Jan  1  1970 modules.alias
+-rw-r--r--    1 root     root           69 Jan  1  1970 modules.ccwmap
+-rw-r--r--    1 root     root         3541 Jan  1  1970 modules.dep
+-rw-r--r--    1 root     root           73 Jan  1  1970 modules.ieee1394map
+-rw-r--r--    1 root     root          141 Jan  1  1970 modules.inputmap
+-rw-r--r--    1 root     root           81 Jan  1  1970 modules.isapnpmap
+-rw-r--r--    1 root     root           74 Jan  1  1970 modules.ofmap
+-rw-r--r--    1 root     root           99 Jan  1  1970 modules.pcimap
+-rw-r--r--    1 root     root           43 Jan  1  1970 modules.seriomap
+-rw-r--r--    1 root     root         6526 Jan  1  1970 modules.symbols
+-rw-r--r--    1 root     root        19918 Jan  1  1970 modules.usbmap
+drwxr-xr-x    6 root     root         1024 Feb 16  2013 drivers
+drwxr-xr-x    4 root     root         1024 Apr 17  2011 fs
+drwxr-xr-x    2 root     root         1024 Apr 17  2011 lib
+/lib/modules/2.6.26-rt-lab126/kernel/lib/crc-ccitt.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/input/keyboard/mxc_keyb.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/input/fiveway/fiveway.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/input/volume/volume.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/input/misc/uinput.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/serial/usbserial.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/serial/option.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/mon/usbmon.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/host/ehci-hcd.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/gadget/g_file_storage.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/gadget/g_ether.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/gadget/g_serial.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/gadget/arcotg_udc.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/usb/core/usbcore.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/wan/mwan.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/slhc.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/wireless/ath6k22.133/ar6000.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/ppp_async.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/ppp_generic.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/ppp_deflate.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/net/ppp_synctty.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/video/eink/hal/eink_fb_hal_auo.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/video/eink/hal/eink_fb_hal_emu.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/video/eink/hal/eink_fb_hal.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/video/eink/hal/eink_fb_hal_broads.ko
+/lib/modules/2.6.26-rt-lab126/kernel/drivers/video/eink/legacy/eink_fb_shim.ko
+/lib/modules/2.6.26-rt-lab126/kernel/fs/nls/nls_ascii.ko
+/lib/modules/2.6.26-rt-lab126/kernel/fs/nls/nls_utf8.ko
+/lib/modules/2.6.26-rt-lab126/kernel/fs/fuse/fuse.ko
+=== SYSCALL_CHECK ===
+1
+0
+=== TUN_OPEN_TEST_DEFERRED ===
+not opened
+=== END2 ===
+sh: 
+: not found
+

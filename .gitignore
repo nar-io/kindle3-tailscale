@@ -1,0 +1,26 @@
+# Build outputs
+dist/
+build/
+src/
+
+# Go toolchains (large, can be downloaded)
+toolchains/
+
+# IDE/editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Sanitization scripts
+sanitize*.ps1
+
+# AI session logs (not part of project)
+*.json
+
+# Large binary outputs (optional - can be added to releases)
+dist/

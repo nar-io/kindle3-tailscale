@@ -1,0 +1,799 @@
+﻿ssh : 
+At line:1 char:35
++ ... g\diag.sh | ssh -o StrictHostKeyChecking=no root@<KINDLE_IP> "sh -s" ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Welcome to <PEER_8>!
+
+=== DATE ===
+Fri Jul 19 16:23:46 +03 2024
+=== UNAME ===
+Linux <PEER_8> 2.6.26-rt-lab126 #5 Sat Sep 1 14:28:26 PDT 2012 armv6l unknown
+=== CPUINFO ===
+Processor	: ARMv6-compatible processor rev 3 (v6l)
+BogoMIPS	: 511.18
+Features	: swp half thumb fastmult vfp edsp java 
+CPU implementer	: 0x41
+CPU architecture: 6TEJ
+CPU variant	: 0x1
+CPU part	: 0xb36
+CPU revision	: 3
+Cache type	: write-back
+Cache clean	: cp15 c7 ops
+Cache lockdown	: format C
+Cache format	: Harvard
+I size		: 16384
+I assoc		: 4
+I line length	: 32
+I sets		: 128
+D size		: 16384
+D assoc		: 4
+D line length	: 32
+D sets		: 128
+
+Hardware	: Amazon MX35 Luigi Board
+Revision	: 35020
+Serial		: "<SERIAL>"
+BoardId		: "SP1B000000000000"
+=== MEMINFO ===
+MemTotal:       256536 kB
+MemFree:         47076 kB
+Buffers:         53080 kB
+Cached:          49460 kB
+SwapCached:          0 kB
+Active:          98300 kB
+Inactive:        73972 kB
+SwapTotal:           0 kB
+SwapFree:            0 kB
+Dirty:               4 kB
+Writeback:           0 kB
+AnonPages:       69744 kB
+Mapped:          23404 kB
+Slab:            30428 kB
+SReclaimable:    15048 kB
+SUnreclaim:      15380 kB
+PageTables:       1540 kB
+NFS_Unstable:        0 kB
+Bounce:              0 kB
+WritebackTmp:        0 kB
+CommitLimit:    128268 kB
+Committed_AS:  1133688 kB
+VmallocTotal:   581632 kB
+VmallocUsed:      1616 kB
+VmallocChunk:   580008 kB
+=== VERSION ===
+Linux version 2.6.26-rt-lab126 (jenkins-official@lucid-build02) (gcc version 4.1.2) #5 Sat Sep 1 14:28:26 PDT 2012
+=== CMDLINE ===
+console=ttymxc0,115200 mem=256M panic=10 root=/dev/mmcblk0p1 ro ip=none quiet lpj=2555904
+=== UPTIME ===
+376.63 201.42 0 0
+=== DF ===
+Filesystem                Size      Used Available Use% Mounted on
+/dev/mmcblk0p1          646.8M    512.0M    108.8M  82% /
+tmpfs                   125.3M     20.0k    125.2M   0% /dev
+shm                     125.3M         0    125.3M   0% /dev/shm
+rwfs                     32.0M    340.0k     31.7M   1% /mnt/rwfs
+rwfs                     32.0M    340.0k     31.7M   1% /var
+/dev/mmcblk0p2           23.2M      1.5M     20.5M   7% /var/local
+/dev/loop/0               3.1G      2.7G    409.1M  87% /mnt/base-us
+fsp                       3.1G      2.7G    409.1M  87% /mnt/us
+fsp                       3.1G      2.7G    409.1M  87% /opt/amazon/screen_saver/600x800
+=== DF_K ===
+Filesystem           1k-blocks      Used Available Use% Mounted on
+/dev/mmcblk0p1          662362    524334    111404  82% /
+tmpfs                   128268        20    128248   0% /dev
+shm                     128268         0    128268   0% /dev/shm
+rwfs                     32768       340     32428   1% /mnt/rwfs
+rwfs                     32768       340     32428   1% /var
+/dev/mmcblk0p2           23797      1570     20999   7% /var/local
+/dev/loop/0            3202192   2783272    418920  87% /mnt/base-us
+fsp                    3202192   2783272    418920  87% /mnt/us
+fsp                    3202192   2783272    418920  87% /opt/amazon/screen_saver/600x800
+=== MOUNT ===
+rootfs on / type rootfs (rw)
+/dev/root on / type ext3 (ro,data=ordered)
+proc on /proc type proc (rw)
+sysfs on /sys type sysfs (rw)
+tmpfs on /dev type tmpfs (rw,mode=755)
+devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+shm on /dev/shm type tmpfs (rw)
+rwfs on /mnt/rwfs type tmpfs (rw,size=32768k)
+rwfs on /var type tmpfs (rw,size=32768k)
+/dev/mmcblk0p2 on /var/local type ext3 (rw,sync,errors=continue,data=ordered)
+/dev/loop/0 on /mnt/base-us type vfat (rw,noexec,noatime,nodiratime,fmask=0022,dmask=0022,codepage=cp437,iocharset=iso8859-1,shortname=mixed,utf8)
+fsp on /mnt/us type fuse.fsp (rw,nosuid,nodev,noatime,user_id=0,group_id=0)
+fsp on /opt/amazon/screen_saver/600x800 type fuse.fsp (rw,nosuid,nodev,noatime,user_id=0,group_id=0)
+=== PARTITIONS ===
+major minor  #blocks  name
+
+   7     0    3205336 loop0
+ 179     0    3907584 mmcblk0
+ 179     1     665628 mmcblk0p1
+ 179     2      24576 mmcblk0p2
+ 179     3       8192 mmcblk0p3
+ 179     4    3205344 mmcblk0p4
+=== LIBC ===
+-rwxr-xr-x    1 root     root       137468 Apr 17  2011 /lib/ld-2.5.so
+lrwxrwxrwx    1 root     root            9 Apr 17  2011 /lib/ld-linux.so.3 -> ld-2.5.so
+lrwxrwxrwx    1 root     root            9 Apr 17  2011 /lib/ld-linux.so.3 -> ld-2.5.so
+-rwxr-xr-x    1 root     root      1348230 Apr 17  2011 /lib/libc-2.5.so
+lrwxrwxrwx    1 root     root           11 Apr 17  2011 /lib/libc.so.6 -> libc-2.5.so
+-rwxr-xr-x    1 root     root       188103 Apr 17  2011 /lib/libcidn-2.5.so
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 /lib/libcidn.so.1 -> libcidn-2.5.so
+-rwxr-xr-x    1 root     root        26525 Apr 17  2011 /lib/libcrypt-2.5.so
+lrwxrwxrwx    1 root     root           15 Apr 17  2011 /lib/libcrypt.so.1 -> libcrypt-2.5.so
+-rwxr-xr-x    1 root     root       496558 Apr 17  2011 /lib/libm-2.5.so
+lrwxrwxrwx    1 root     root           11 Apr 17  2011 /lib/libm.so.6 -> libm-2.5.so
+-rwxr-xr-x    1 root     root        22282 Apr 17  2011 /lib/libmemusage.so
+-rwxr-xr-x    1 root     root       113560 Apr 17  2011 /lib/libpthread-2.5.so
+lrwxrwxrwx    1 root     root           17 Apr 17  2011 /lib/libpthread.so.0 -> libpthread-2.5.so
+GNU C Library stable release version 2.5, by Roland McGrath et al.
+Copyright (C) 2006 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+=== LIBC_STRINGS ===
+GNU C Library stable release version 2.5, by Roland McGrath et al.
+=== OSRELEASE ===
+cat: can't open '/etc/os-release': No such file or directory
+
+
+Welcome to <PEER_8>!
+
+=== IP ===
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:18 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:18 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:3038 (2.9 KiB)  TX bytes:3038 (2.9 KiB)
+
+usb0      Link encap:Ethernet  HWaddr EE:19:00:00:00:00  
+          inet addr:<USB_IP>  Bcast:<USB_IP>55  Mask:255.255.255.0
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+wlan0     Link encap:Ethernet  HWaddr 28:EF:01:65:5E:D2  
+          inet addr:<KINDLE_IP>  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:814 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:220 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:138295 (135.0 KiB)  TX bytes:35358 (34.5 KiB)
+
+=== ROUTE ===
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+1.1.1.1         <ROUTER_IP>     255.255.255.255 UGH   0      0        0 wlan0
+8.8.8.8         <ROUTER_IP>     255.255.255.255 UGH   0      0        0 wlan0
+192.168.2.0     0.0.0.0         255.255.255.0   U     0      0        0 usb0
+192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 wlan0
+0.0.0.0         <ROUTER_IP>     0.0.0.0         UG    0      0        0 wlan0
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+wlan0	01010101	0101A8C0	0007	0	0	0	FFFFFFFF	0	0	0                                                                              
+wlan0	08080808	0101A8C0	0007	0	0	0	FFFFFFFF	0	0	0                                                                              
+usb0	0002A8C0	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+wlan0	0001A8C0	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                              
+wlan0	00000000	0101A8C0	0003	0	0	0	00000000	0	0	0                                                                              
+=== DNS ===
+domain home
+nameserver 1.1.1.1
+nameserver 8.8.8.8
+=== HOSTS ===
+127.0.0.1	localhost.localdomain localhost <PEER_8>
+192.168.15.200 	usbnet-host-gw
+=== TUN_DEV ===
+ls: /dev/tun: No such file or directory
+crw-------    1 root     root      10, 200 Jan  1  1970 /dev/net/tun
+
+/dev/net:
+crw-------    1 root     root      10, 200 Jan  1  1970 tun
+=== DEV_NET_LIST ===
+drwxr-xr-x   13 root     root         1120 Jul 19 16:19 .
+drwxr-xr-x   14 root     root         1024 Nov 25  2016 ..
+drwxr-xr-x    4 root     root          100 Jul 19 16:21 .udev
+lrwxrwxrwx    1 root     root           13 Jan  1  1970 MAKEDEV -> /sbin/MAKEDEV
+crw-rw----    1 root     root      10, 159 Jan  1  1970 accessoryport
+crw-rw----    1 root     root       5,   1 Jul 19 16:19 console
+lrwxrwxrwx    1 root     root           11 Jan  1  1970 core -> /proc/kcore
+crw-rw----    1 root     root      10,  63 Jan  1  1970 cpu_dma_latency
+crw-rw----    1 root     root      10, 160 Jan  1  1970 fatfsdev
+drwxr-xr-x    2 root     root           60 Jan  1  1970 fb
+lrwxrwxrwx    1 root     root            4 Jan  1  1970 fb0 -> fb/0
+lrwxrwxrwx    1 root     root           13 Jan  1  1970 fd -> /proc/self/fd
+crw-rw----    1 root     root       1,   7 Jan  1  1970 full
+crw-rw----    1 root     root      10, 229 Jan  1  1970 fuse
+drwxr-xr-x    2 root     root           80 Jan  1  1970 i2c
+prw-------    1 root     root            0 Mar  1  2019 initctl
+drwxr-xr-x    2 root     root          120 Jan  1  1970 input
+crw-rw----    1 root     root       1,   2 Jan  1  1970 kmem
+crw-rw----    1 root     root       1,  11 Jan  1  1970 kmsg
+srw-rw-rw-    1 root     root            0 Jul 19 16:19 log
+drwxr-xr-x    2 root     root          200 Jan  1  1970 loop
+crw-rw----    1 root     root      10, 158 Jan  1  1970 luigibutton
+crw-rw----    1 root     root       1,   1 Jan  1  1970 mem
+drwxr-xr-x    2 root     root           80 Jan  1  1970 misc
+brw-rw----    1 root     root     179,   0 Jan  1  1970 mmcblk0
+brw-rw----    1 root     root     179,   1 Jan  1  1970 mmcblk0p1
+brw-rw----    1 root     root     179,   2 Jan  1  1970 mmcblk0p2
+brw-rw----    1 root     root     179,   3 Jan  1  1970 mmcblk0p3
+brw-rw----    1 root     root     179,   4 Jan  1  1970 mmcblk0p4
+crw-rw----    1 root     root     251,   0 Jan  1  1970 mwan
+crw-rw----    1 root     root      10, 165 Jan  1  1970 mxc_ALSA
+crw-rw----    1 root     root     253,   0 Jan  1  1970 mxc_ipu
+drwxr-xr-x    2 root     root           60 Jan  1  1970 net
+crw-rw----    1 root     root      10,  62 Jan  1  1970 network_latency
+crw-rw----    1 root     root      10,  61 Jan  1  1970 network_throughput
+crw-rw----    1 root     root       1,   3 Jul 19 16:18 null
+crw-rw----    1 root     root     252,   0 Jan  1  1970 pmic
+crw-------    1 root     root     108,   0 Jan  1  1970 ppp
+crw-rw----    1 root     root       5,   2 Jan  1  1970 ptmx
+drwxr-xr-x    2 root     root            0 Jan  1  1970 pts
+crw-rw----    1 root     root       1,   8 Jan  1  1970 random
+crw-rw----    1 root     root     254,   0 Jan  1  1970 rtc0
+crw-rw----    1 root     root     254,   1 Jan  1  1970 rtc1
+drwxrwxrwt    2 root     root           40 Jan  1  1970 shm
+drwxr-xr-x    2 root     root          120 Jan  1  1970 snd
+lrwxrwxrwx    1 root     root           24 Jan  1  1970 sndstat -> /proc/asound/oss/sndstat
+lrwxrwxrwx    1 root     root           15 Jan  1  1970 stderr -> /proc/self/fd/2
+lrwxrwxrwx    1 root     root           15 Jan  1  1970 stdin -> /proc/self/fd/0
+lrwxrwxrwx    1 root     root           15 Jan  1  1970 stdout -> /proc/self/fd/1
+crw-rw----    1 root     root       5,   0 Jan  1  1970 tty
+drwxr-xr-x    2 root     root          100 Jan  1  1970 ttymxc
+lrwxrwxrwx    1 root     root            8 Jan  1  1970 ttymxc0 -> ttymxc/0
+lrwxrwxrwx    1 root     root            8 Jan  1  1970 ttymxc1 -> ttymxc/1
+lrwxrwxrwx    1 root     root            8 Jan  1  1970 ttymxc2 -> ttymxc/2
+crw-rw----    1 root     root       1,   9 Jul 19 16:23 urandom
+crw-rw----    1 root     root       1,   5 Jan  1  1970 zero
+=== TUN_MODULE_SEARCH ===
+drwxr-xr-x    3 root     root         1024 Feb 16  2013 .
+drwxr-xr-x    4 root     root         2048 May 30 16:17 ..
+drwxr-xr-x    3 root     root         1024 Feb 16  2013 2.6.26-rt-lab126
+=== LSmod ===
+Module                  Size  Used by
+g_ether                21096  0 
+ar6000                161076  0 
+volume                  8900  0 
+fiveway                23552  1 
+mxc_keyb               15904  1 
+uinput                  7776  0 
+fuse                   48348  2 
+arcotg_udc             38628  1 g_ether
+mwan                    7324  0 
+eink_fb_shim          116732  0 
+eink_fb_hal_broads    397532  0 
+eink_fb_hal            59764  7 eink_fb_shim,eink_fb_hal_broads
+g_ether 21096 0 - Live 0xbf09f000
+ar6000 161076 0 - Live 0xbf0c7000
+volume 8900 0 - Live 0xbf0c3000
+fiveway 23552 1 - Live 0xbf0bc000
+mxc_keyb 15904 1 - Live 0xbf0b7000
+uinput 7776 0 - Live 0xbf0b4000
+fuse 48348 2 - Live 0xbf0a7000
+arcotg_udc 38628 1 g_ether, Live 0xbf094000
+mwan 7324 0 - Live 0xbf091000
+eink_fb_shim 116732 0 - Live 0xbf073000
+eink_fb_hal_broads 397532 0 - Live 0xbf010000
+eink_fb_hal 59764 7 eink_fb_shim,eink_fb_hal_broads, Live 0xbf000000
+=== MODULES_BUILTIN ===
+=== KCONFIG ===
+ls: /boot/config*: No such file or directory
+-r--r--r--    1 root     root         8837 Jul 19 16:23 /proc/config.gz
+CONFIG_INET=y
+# CONFIG_INET_AH is not set
+# CONFIG_INET_ESP is not set
+# CONFIG_INET_IPCOMP is not set
+# CONFIG_INET_XFRM_TUNNEL is not set
+# CONFIG_INET_TUNNEL is not set
+# CONFIG_INET_XFRM_MODE_TRANSPORT is not set
+# CONFIG_INET_XFRM_MODE_TUNNEL is not set
+# CONFIG_INET_XFRM_MODE_BEET is not set
+# CONFIG_INET_LRO is not set
+CONFIG_INET_DIAG=y
+CONFIG_INET_TCP_DIAG=y
+# CONFIG_IPV6 is not set
+CONFIG_NETFILTER=y
+# CONFIG_NETFILTER_DEBUG is not set
+CONFIG_NETFILTER_ADVANCED=y
+# CONFIG_NETFILTER_NETLINK_QUEUE is not set
+# CONFIG_NETFILTER_NETLINK_LOG is not set
+CONFIG_NETFILTER_XTABLES=y
+# CONFIG_NETFILTER_XT_TARGET_CLASSIFY is not set
+# CONFIG_NETFILTER_XT_TARGET_MARK is not set
+# CONFIG_NETFILTER_XT_TARGET_NFQUEUE is not set
+# CONFIG_NETFILTER_XT_TARGET_NFLOG is not set
+# CONFIG_NETFILTER_XT_TARGET_RATEEST is not set
+# CONFIG_NETFILTER_XT_TARGET_TCPMSS is not set
+# CONFIG_NETFILTER_XT_MATCH_COMMENT is not set
+# CONFIG_NETFILTER_XT_MATCH_CONNBYTES is not set
+# CONFIG_NETFILTER_XT_MATCH_CONNLIMIT is not set
+# CONFIG_NETFILTER_XT_MATCH_CONNMARK is not set
+CONFIG_NETFILTER_XT_MATCH_CONNTRACK=y
+# CONFIG_NETFILTER_XT_MATCH_DCCP is not set
+# CONFIG_NETFILTER_XT_MATCH_DSCP is not set
+# CONFIG_NETFILTER_XT_MATCH_ESP is not set
+# CONFIG_NETFILTER_XT_MATCH_HELPER is not set
+CONFIG_NETFILTER_XT_MATCH_IPRANGE=y
+# CONFIG_NETFILTER_XT_MATCH_LENGTH is not set
+# CONFIG_NETFILTER_XT_MATCH_LIMIT is not set
+CONFIG_NETFILTER_XT_MATCH_MAC=y
+# CONFIG_NETFILTER_XT_MATCH_MARK is not set
+# CONFIG_NETFILTER_XT_MATCH_OWNER is not set
+# CONFIG_NETFILTER_XT_MATCH_POLICY is not set
+# CONFIG_NETFILTER_XT_MATCH_MULTIPORT is not set
+# CONFIG_NETFILTER_XT_MATCH_PKTTYPE is not set
+# CONFIG_NETFILTER_XT_MATCH_QUOTA is not set
+# CONFIG_NETFILTER_XT_MATCH_RATEEST is not set
+# CONFIG_NETFILTER_XT_MATCH_REALM is not set
+# CONFIG_NETFILTER_XT_MATCH_SCTP is not set
+CONFIG_NETFILTER_XT_MATCH_STATE=y
+# CONFIG_NETFILTER_XT_MATCH_STATISTIC is not set
+# CONFIG_NETFILTER_XT_MATCH_STRING is not set
+# CONFIG_NETFILTER_XT_MATCH_TCPMSS is not set
+# CONFIG_NETFILTER_XT_MATCH_TIME is not set
+# CONFIG_NETFILTER_XT_MATCH_U32 is not set
+# CONFIG_NETFILTER_XT_MATCH_HASHLIMIT is not set
+# CONFIG_TUN is not set
+=== TUN_IN_PROC ===
+223 uinput
+229 fuse
+ 60 eink_events
+ 61 network_throughput
+ 62 network_latency
+ 63 cpu_dma_latency
+165 mxc_ALSA
+130 watchdog
+158 luigibutton
+159 accessoryport
+160 fatfsdev
+=== TUN_TEST_READONLY ===
+lrwxrwxrwx    1 root     root            0 Jan  1  1970 lo -> ../../devices/virtual/net/lo
+lrwxrwxrwx    1 root     root            0 Jul 19 16:23 usb0 -> ../../devices/platform/fsl-usb2-udc/gadget/net/usb0
+lrwxrwxrwx    1 root     root            0 Jul 19 16:21 wlan0 -> ../../devices/virtual/net/wlan0
+=== NETDEV ===
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+    lo:    3038      18    0    0    0     0          0         0     3038      18    0    0    0     0       0          0
+ wlan0:  139275     828    0    0    0     0          0         0    49710     251    0    0    0     0       0          0
+  usb0:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+=== TOOLS ===
+sh: /bin/sh
+bash: MISSING
+ash: /bin/ash
+busybox: /bin/busybox
+gcc: MISSING
+cc: MISSING
+g++: MISSING
+ld: MISSING
+make: MISSING
+python: MISSING
+python2: MISSING
+python3: MISSING
+pip: MISSING
+perl: MISSING
+wget: /usr/bin/wget
+curl: /usr/bin/curl
+tar: /bin/tar
+gzip: /bin/gzip
+gunzip: /bin/gunzip
+xz: MISSING
+unzip: /usr/bin/unzip
+scp: MISSING
+sftp: MISSING
+nc: /usr/bin/nc
+telnet: /usr/bin/telnet
+openssl: /usr/bin/openssl
+iptables: MISSING
+ip: /bin/ip
+ifconfig: MISSING
+route: MISSING
+nslookup: /usr/bin/nslookup
+ping: /bin/ping
+insmod: MISSING
+modprobe: MISSING
+dmesg: /bin/dmesg
+=== BUSYBOX ===
+BusyBox v1.7.2 (2019-05-30 09:57:42 UTC) multi-call binary
+Copyright (C) 1998-2006 ┬áErik Andersen, Rob Landley, and others.
+Licensed under GPLv2. ┬áSee source distribution for full notice.
+
+Usage: busybox [function] [arguments]...
+=== GCC_VER ===
+sh: gcc: not found
+sh: ld: not found
+=== PYTHON_VER ===
+Python 2.7.18
+Python 2.7.18
+=== OPENSSL ===
+OpenSSL 0.9.8j 07 Jan 2009
+=== WRITABLE ===
+/mnt/us WRITABLE
+/tmp WRITABLE
+/var/tmp WRITABLE
+grep: invalid option -- E
+BusyBox v1.7.2 (2019-05-30 09:57:42 UTC) multi-call binary
+
+Usage: grep [-HhrilLnqvsoeFABC] PATTERN [FILEs...]
+
+Search for PATTERN in each FILE or standard input
+
+Options:
+	-H	Prefix output lines with filename where match was found
+	-h	Suppress the prefixing filename on output
+	-r	Recurse subdirectories
+	-i	Ignore case distinctions
+	-l	List names of files that match
+	-L	List names of files that do not match
+	-n	Print line number with output lines
+	-q	Quiet. Returns 0 if PATTERN was found, 1 otherwise
+	-v	Select non-matching lines
+	-s	Suppress file open/read error messages
+	-c	Only print count of matching lines
+	-o	Show only the part of a line that matches PATTERN
+	-m MAX	Match up to MAX times per file
+	-F	PATTERN is a set of newline-separated strings
+	-e PTRN	Pattern to match
+	-f FILE	Read pattern from file
+	-A	Print NUM lines of trailing context
+	-B	Print NUM lines of leading context
+	-C	Print NUM lines of output context
+
+=== USB_DIRS ===
+drwxr-xr-x   35 root     root         8192 Jul 19 16:23 .
+drwxr-xr-x    9 root     root         1024 Sep 25  2025 ..
+drwxr-xr-x    2 root     root         8192 Jul 19 15:23 .active-content-data
+-rwxr-xr-x    1 root     root        18043 Sep 20  2011 COPYING
+-rwxr-xr-x    1 root     root         1752 Sep 20  2011 INSTALL.TXT
+drwxr-xr-x    2 root     root         8192 Jul 19  2024 System Volume Information
+-rwxr-xr-x    1 root     root          442 Oct  5  2012 Xvnc-start.sh
+-rwxr-xr-x    1 root     root          132 Jul 19  2024 aarch64_probe
+-rwxr-xr-x    1 root     root          129 May 27  2025 abra.pbm
+-rwxr-xr-x    1 root     root         1553 Jul 19  2024 agy_tests.sh
+-rwxr-xr-x    1 root     root       704284 Jul 19  2024 armv6_probe
+drwxr-xr-x    2 root     root         8192 Jul 19 16:18 audible
+-rwxr-xr-x    1 root     root       808932 Aug  8  2011 bash
+-rwxr-xr-x    1 root     root          607 Sep 25  2025 bootdebian.sh
+-rwxr-xr-x    1 root     root        14662 Feb  5  2026 casio_hour_chime.mp3
+-rwxr-xr-x    1 root     root          163 Jun 11  2025 dakika.sh
+-rwxr-xr-x    1 root     root          161 Jun 21  2025 dash.sh
+-rwxr-xr-x    1 root     root    1598029824 May 11  2026 debian.ext3
+-rwxr-xr-x    1 root     root          149 Jun 21  2025 deneme.py
+drwxr-xr-x    7 root     root         8192 Dec 11  2024 developer
+drwxr-xr-x    2 root     root         8192 May 25  2025 documents
+drwxr-xr-x    2 root     root         8192 Sep 20  2025 eski
+drwxr-xr-x   12 root     root         8192 Dec 19  2025 extensions
+drwxr-xr-x    5 root     root         8192 Jul 19  2024 fbink
+-rwxr-xr-x    1 root     root          265 May 28  2025 font.sh
+drwxr-xr-x    2 root     root         8192 May 26  2025 fonts
+drwxr-xr-x    2 root     root         8192 May 31  2025 hava
+-rwxr-xr-x    1 root     root          500 May 31  2025 hava.py
+-rwxr-xr-x    1 root     root            0 May 11  2026 image.png
+drwxr-xr-x    3 root     root         8192 Jan  3  2025 launchpad
+drwxr-xr-x    4 root     root         8192 Jul 19 15:24 linkjail
+drwxr-xr-x   10 root     root         8192 Oct 20  2026 linkss
+-rwxr-xr-x    1 root     root        20576 May 29  2025 logo.png
+-rwxr-xr-x    1 root     root         4551 May 29  2026 miner.py
+-rwxr-xr-x    1 root     root       127988 May 29  2026 minerd
+drwxr-xr-x    2 root     root         8192 Dec 19  2025 mrpackages
+drwxr-xr-x    2 root     root         8192 Aug 10  2025 music
+drwxr-xr-x    2 root     root         8192 Aug 10  2012 myts
+drwxr-xr-x    8 root     root         8192 May 11  2026 picobot-main
+drwxr-xr-x    2 root     root         8192 May 10  2026 picoclaw
+drwxr-xr-x   12 root     root         8192 Dec 19  2025 .
+drwxr-xr-x   35 root     root         8192 Jul 19 16:23 ..
+drwxr-xr-x    3 root     root         8192 Jul 19 16:28 BatteryStatus
+drwxr-xr-x    3 root     root         8192 Jun 11  2025 Dashboard
+-rwxr-xr-x    1 root     root           75 Oct  7  2026 KUAL.cfg
+-rwxr-xr-x    1 root     root         1083 Jan 29  2022 LICENSE
+drwxr-xr-x    6 root     root         8192 Jul 19 16:27 MRInstaller
+-rwxr-xr-x    1 root     root       152601 Jan 29  2022 demo.jpg
+drwxr-xr-x    5 root     root         8192 May 25  2025 gawk
+drwxr-xr-x    3 root     root         8192 Jul 19 16:28 helper
+drwxr-xr-x    3 root     root         8192 Jun 11  2025 linkss
+drwxr-xr-x    3 root     root         8192 Dec 19  2025 usbnet
+drwxr-xr-x    3 root     root         8192 May  6 04:18 weather
+drwxr-xr-x    3 root     root         8192 Jun 16  2025 weather-stand
+drwxr-xr-x    3 root     root         8192 Jun 16  2025 weather-stand-prerequisite
+=== EXISTING_TAILSCALE ===
+ls: /mnt/us/extensions/tailscale: No such file or directory
+=== KUAL ===
+drwxr-xr-x   12 root     root         8192 Dec 19  2025 .
+drwxr-xr-x   35 root     root         8192 Jul 19 16:23 ..
+drwxr-xr-x    3 root     root         8192 Jul 19 16:28 BatteryStatus
+drwxr-xr-x    3 root     root         8192 Jun 11  2025 Dashboard
+-rwxr-xr-x    1 root     root           75 Oct  7  2026 KUAL.cfg
+-rwxr-xr-x    1 root     root         1083 Jan 29  2022 LICENSE
+drwxr-xr-x    6 root     root         8192 Jul 19 16:27 MRInstaller
+-rwxr-xr-x    1 root     root       152601 Jan 29  2022 demo.jpg
+drwxr-xr-x    5 root     root         8192 May 25  2025 gawk
+drwxr-xr-x    3 root     root         8192 Jul 19 16:28 helper
+drwxr-xr-x    3 root     root         8192 Jun 11  2025 linkss
+drwxr-xr-x    3 root     root         8192 Dec 19  2025 usbnet
+drwxr-xr-x    3 root     root         8192 May  6 04:18 weather
+drwxr-xr-x    3 root     root         8192 Jun 16  2025 weather-stand
+drwxr-xr-x    3 root     root         8192 Jun 16  2025 weather-stand-prerequisite
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+	<information>
+		<name>Battery Status</name>
+		<version>1.1</version>
+		<author>NiLuJe</author>
+		<id>BatteryStatus</id>
+	</information>
+	<menus>
+		<menu type="json" dynamic="true">menu.json</menu>
+	</menus>
+</extension>
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+    <information>
+        <name>Pihole Dashboard</name>
+        <version>2.0</version>
+        <author>nari</author>
+        <id>PiholeDashboard</id>
+    </information>
+    <menus>
+        <menu type="json" dynamic="true">menu.json</menu>
+    </menus>
+</extension>
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+	<information>
+		<name>MR Installer</name>
+		<version>1.6</version>
+		<author>NiLuJe</author>
+		<id>MRInstaller</id>
+	</information>
+	<menus>
+		<menu type="json" dynamic="true">menu.json</menu>
+	</menus>
+</extension>
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+	<information>
+		<name>gawk</name>
+=== LAUNCHER ===
+drwxr-xr-x    2 root     root         2048 Oct  7  2026 .
+drwxr-xr-x   32 root     root         2048 Jun 11  2025 ..
+-rwxr-xr-x    1 root     root         1490 Apr 17  2011 audio
+-rwxr-xr-x    1 root     root         4336 May 26 17:21 battcheck
+-rwxr-xr-x    1 root     root         3038 Oct  7  2026 boot_finished
+-rwxr-xr-x    1 root     root         2941 Oct  7  2026 boot_finished.bak
+-rwxr-xr-x    1 root     root         1344 Apr 17  2011 bootmisc.sh
+-rwxr-xr-x    1 root     root          725 Apr 17  2011 browserd
+-rwxr-xr-x    1 root     root          547 Apr 17  2011 chpriority
+-rwxr-xr-x    1 root     root         3018 Apr 17  2011 ckimage
+-rwxr-xr-x    1 root     root          604 Apr 17  2011 cmd
+-rwxr-xr-x    1 root     root          648 May 29  2025 cron
+-rwxr-xr-x    1 root     root         1060 Apr 17  2011 dbus
+-rwxr-xr-x    1 root     root          674 Apr 17  2011 diag_reboot
+-rwxr-xr-x    1 root     root         5257 Apr 17  2011 diags
+-rwxr-xr-x    1 root     root         1883 Apr 17  2011 ethernet
+-rwxr-xr-x    1 root     root         2434 Apr 17  2011 filesystems
+-rwxr-xr-x    1 root     root         7860 Apr 17  2011 framework
+-rwxr-xr-x    1 root     root         3540 Apr 17  2011 governor
+-rwxr-xr-x    1 root     root          242 Apr 17  2011 guidinit
+-rwxr-xr-x    1 root     root          508 Apr 17  2011 halt
+-rwxr-xr-x    1 root     root          334 Apr 17  2011 hostname
+-rwxr-xr-x    1 root     root          399 Apr 17  2011 init_time
+-rwxr-xr-x    1 root     root         1711 Apr 17  2011 kdb
+-rwxr-xr-x    1 root     root          548 Apr 17  2011 kernel_toggle
+-rwxr-xr-x    1 root     root          425 Sep 22  2024 launchpad
+-rwxr-xr-x    1 root     root         1908 Jul 19 15:24 linkjail
+-rwxr-xr-x    1 root     root         2090 Jun 11  2025 linkss
+-rwxr-xr-x    1 root     root          687 Apr 17  2011 lipc-daemon
+-rwxr-xr-x    1 root     root          788 Apr 17  2011 mcsd
+-rwxr-xr-x    1 root     root          692 Apr 17  2011 modules
+-rwxr-xr-x    1 root     root          588 Apr 17  2011 netwatchd
+-rwxr-xr-x    1 root     root          587 Apr 17  2011 network
+-rwxr-xr-x    1 root     root           59 May 25  2025 nosleep
+-rwxr-xr-x    1 root     root          670 Apr 17  2011 phd
+-rwxr-xr-x    1 root     root          582 Apr 17  2011 pmond
+-rwxr-xr-x    1 root     root          534 Apr 17  2011 power
+-rwxr-xr-x    1 root     root          689 Apr 17  2011 powerd
+-rwxr-xr-x    1 root     root          651 Apr 17  2011 pre-wifid
+-rwxr-xr-x    1 root     root         3394 Apr 17  2011 rc
+-rwxr-xr-x    1 root     root         2813 Apr 17  2011 rcS
+-rwxr-xr-x    1 root     root         2790 Apr 17  2011 reboot
+-rwxr-xr-x    1 root     root         2691 Apr 17  2011 rootfsresize
+-rwxr-xr-x    1 root     root         7838 Apr 17  2011 scroll
+-rwxr-xr-x    1 root     root          333 Apr 17  2011 sdtime_start
+-rwxr-xr-x    1 root     root          546 Apr 17  2011 sdtime_stop
+-rwxr-xr-x    1 root     root         1272 Apr 17  2011 syslog-ng
+-rwxr-xr-x    1 root     root         1984 Apr 17  2011 system
+-rwxr-xr-x    1 root     root         1090 Apr 17  2011 testd
+-rwxr-xr-x    1 root     root          676 Apr 17  2011 tmd
+-rwxr-xr-x    1 root     root          577 Apr 17  2011 ttsd
+-rwxr-xr-x    1 root     root         1815 Apr 17  2011 udev
+-rwxr-xr-x    1 root     root         3766 Apr 17  2011 updater
+-rwxr-xr-x    1 root     root         3562 Dec 19  2025 usbnet
+-rwxr-xr-x    1 root     root         1983 Dec 19  2025 usbnet-preinit
+-rwxr-xr-x    1 root     root         1170 Apr 17  2011 usbnetd
+-rwxr-xr-x    1 root     root         5089 Apr 17  2011 userstore
+-rwxr-xr-x    1 root     root        28675 Apr 17  2011 video
+-rwxr-xr-x    1 root     root          691 Apr 17  2011 volumd
+-rwxr-xr-x    1 root     root         2904 Apr 17  2011 wan
+-rwxr-xr-x    1 root     root          697 Apr 17  2011 wand
+-rwxr-xr-x    1 root     root          861 Sep  2  2012 webreaderd
+-rwxr-xr-x    1 root     root         1258 Jul 17  2012 wifi
+-rwxr-xr-x    1 root     root         1041 Jul 17  2012 wifid
+-rwxr-xr-x    1 root     root         2114 Feb 16  2013 wpa_supplicant
+/etc/rc.d:
+drwxr-xr-x    2 root     root         1024 Feb 16  2013 .
+drwxr-xr-x   32 root     root         2048 Jun 11  2025 ..
+-rw-r--r--    1 root     root         5549 Apr 17  2011 features
+-rw-r--r--    1 root     root        21437 Feb 16  2013 functions
+-rwxr-xr-x    1 root     root          321 Apr 17  2011 keep_awake
+-rwxr-xr-x    1 root     root         1865 Apr 17  2011 status
+
+/etc/rc0.d:
+drwxr-xr-x    2 root     root         1024 Jun 11  2025 .
+drwxr-xr-x   32 root     root         2048 Jun 11  2025 ..
+lrwxrwxrwx    1 root     root           19 Apr 17  2011 K04framework -> ../init.d/framework
+lrwxrwxrwx    1 root     root           18 Apr 17  2011 K06browserd -> ../init.d/browserd
+lrwxrwxrwx    1 root     root           22 Feb 16  2013 K07webreaderd -> /etc/init.d/webreaderd
+lrwxrwxrwx    1 root     root           18 Jun 11  2025 K08linkss -> /etc/init.d/linkss
+lrwxrwxrwx    1 root     root           18 May 26 16:25 K09usbnet -> /etc/init.d/usbnet
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 K10cron -> ../init.d/cron
+lrwxrwxrwx    1 root     root           21 Apr 17  2011 K10lipc-daemon -> ../init.d/lipc-daemon
+lrwxrwxrwx    1 root     root           13 Apr 17  2011 K10tmd -> ../init.d/tmd
+lrwxrwxrwx    1 root     root           15 Apr 17  2011 K15audio -> ../init.d/audio
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 K17ttsd -> ../init.d/ttsd
+lrwxrwxrwx    1 root     root           15 Apr 17  2011 K19testd -> ../init.d/testd
+lrwxrwxrwx    1 root     root           19 Apr 17  2011 K19userstore -> ../init.d/userstore
+lrwxrwxrwx    1 root     root           16 Apr 17  2011 K20volumd -> ../init.d/volumd
+lrwxrwxrwx    1 root     root           13 Apr 17  2011 K25phd -> ../init.d/phd
+lrwxrwxrwx    1 root     root           17 Apr 17  2011 K29usbnetd -> ../init.d/usbnetd
+lrwxrwxrwx    1 root     root           13 Apr 17  2011 K30cmd -> ../init.d/cmd
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 K30wand -> ../init.d/wand
+lrwxrwxrwx    1 root     root           15 Apr 17  2011 K30wifid -> ../init.d/wifid
+lrwxrwxrwx    1 root     root           16 Apr 17  2011 K35powerd -> ../init.d/powerd
+lrwxrwxrwx    1 root     root           19 Apr 17  2011 K35pre-wifid -> ../init.d/pre-wifid
+lrwxrwxrwx    1 root     root           15 Apr 17  2011 K80pmond -> ../init.d/pmond
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 K85dbus -> ../init.d/dbus
+lrwxrwxrwx    1 root     root           15 Apr 17  2011 K90video -> ../init.d/video
+lrwxrwxrwx    1 root     root           19 Apr 17  2011 K99syslog-ng -> ../init.d/syslog-ng
+lrwxrwxrwx    1 root     root           23 Apr 17  2011 S50kernel_toggle -> ../init.d/kernel_toggle
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 S95poweroff -> ../init.d/halt
+
+/etc/rc1.d:
+drwxr-xr-x    2 root     root         1024 Feb 16  2013 .
+drwxr-xr-x   32 root     root         2048 Jun 11  2025 ..
+lrwxrwxrwx    1 root     root           19 Apr 17  2011 K05framework -> ../init.d/framework
+lrwxrwxrwx    1 root     root           18 Apr 17  2011 K06browserd -> ../init.d/browserd
+lrwxrwxrwx    1 root     root           22 Feb 16  2013 K07webreaderd -> /etc/init.d/webreaderd
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 K10cron -> ../init.d/cron
+lrwxrwxrwx    1 root     root           21 Apr 17  2011 K10lipc-daemon -> ../init.d/lipc-daemon
+lrwxrwxrwx    1 root     root           13 Apr 17  2011 K10tmd -> ../init.d/tmd
+lrwxrwxrwx    1 root     root           15 Apr 17  2011 K15audio -> ../init.d/audio
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 K17ttsd -> ../init.d/ttsd
+lrwxrwxrwx    1 root     root           15 Apr 17  2011 K19testd -> ../init.d/testd
+lrwxrwxrwx    1 root     root           16 Apr 17  2011 K20volumd -> ../init.d/volumd
+lrwxrwxrwx    1 root     root           13 Apr 17  2011 K25phd -> ../init.d/phd
+lrwxrwxrwx    1 root     root           17 Apr 17  2011 K29usbnetd -> ../init.d/usbnetd
+lrwxrwxrwx    1 root     root           13 Apr 17  2011 K30cmd -> ../init.d/cmd
+lrwxrwxrwx    1 root     root           19 Apr 17  2011 K30netwatchd -> ../init.d/netwatchd
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 K30wand -> ../init.d/wand
+lrwxrwxrwx    1 root     root           15 Apr 17  2011 K30wifid -> ../init.d/wifid
+lrwxrwxrwx    1 root     root           16 Apr 17  2011 K35powerd -> ../init.d/powerd
+lrwxrwxrwx    1 root     root           19 Apr 17  2011 K35pre-wifid -> ../init.d/pre-wifid
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 K76mcsd -> ../init.d/mcsd
+lrwxrwxrwx    1 root     root           15 Apr 17  2011 K80pmond -> ../init.d/pmond
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 K85dbus -> ../init.d/dbus
+lrwxrwxrwx    1 root     root           19 Apr 17  2011 K99syslog-ng -> ../init.d/syslog-ng
+
+/etc/rc2.d:
+drwxr-xr-x    2 root     root         1024 Feb 16  2013 .
+drwxr-xr-x   32 root     root         2048 Jun 11  2025 ..
+lrwxrwxrwx    1 root     root           19 Apr 17  2011 K05framework -> ../init.d/framework
+lrwxrwxrwx    1 root     root           18 Apr 17  2011 K06browserd -> ../init.d/browserd
+lrwxrwxrwx    1 root     root           22 Feb 16  2013 K07webreaderd -> /etc/init.d/webreaderd
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 K10cron -> ../init.d/cron
+lrwxrwxrwx    1 root     root           21 Apr 17  2011 K10lipc-daemon -> ../init.d/lipc-daemon
+lrwxrwxrwx    1 root     root           13 Apr 17  2011 K10tmd -> ../init.d/tmd
+lrwxrwxrwx    1 root     root           15 Apr 17  2011 K15audio -> ../init.d/audio
+lrwxrwxrwx    1 root     root           14 Apr 17  2011 K17ttsd -> ../init.d/ttsd
+lrwxrwxrwx    1 root     root           15 Apr 17  2011 K19testd -> ../init.d/testd
+lrwxrwxrwx    1 root     root           16 Apr 17  2011 K20volumd -> ../init.d/volumd
+lrwxrwxrwx    1 root     root           13 Apr 17  2011 K25phd -> ../init.d/phd
+lrwxrwxrwx    1 root     root           17 Apr 17  2011 K29usbnetd -> ../init.d/usbnetd
+lrwxrwxrwx    1 root     root           13 Apr 17  2011 K30cmd -> ../init.d/cmd
+#!/bin/sh
+#
+# rcS		Call all S??* scripts in /etc/rcS.d in
+#		numerical/alphabetical order.
+#
+# Version:	@(#)/etc/init.d/rcS  2.76  19-Apr-1999  miquels@cistron.nl
+#
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+runlevel=S
+prevlevel=N
+umask 022
+export PATH runlevel prevlevel
+
+#
+# Start script or program.
+#
+startup() {
+	case "$1" in
+		*.sh)
+		update_boot_progress "`basename $1`"
+		# Source shell script for speed.
+		(
+			trap - INT QUIT TSTP
+			set start
+			. $i &
+		)
+		;;
+		*)
+		# No sh extension, so fork subprocess.
+		update_boot_progress "`basename $1`"
+		$i start &
+		;;
+	esac
+}
+
+#	Make sure proc is mounted
+#
+[ -d "/proc/1" ] || mount /proc
+
+=== POWER ===
+drwxr-xr-x    2 root     root            0 Jan  1  1970 .
+drwxr-xr-x   24 root     root            0 Jan  1  1970 ..
+cat: can't open '/sys/class/power_supply/*/capacity': No such file or directory
+=== KERNEL_SYSCALLS ===
+2.6.26-rt-lab126
+0
+=== NET_NAMESPACES ===
+ls: /proc/self/ns: No such file or directory
+=== CGROUPS ===
+cat: can't open '/proc/cgroups': No such file or directory
+=== FILESYSTEMS ===
+nodev	sysfs
+nodev	rootfs
+nodev	bdev
+nodev	proc
+nodev	debugfs
+nodev	sockfs
+nodev	pipefs
+nodev	anon_inodefs
+nodev	tmpfs
+nodev	inotifyfs
+nodev	devpts
+	ext3
+	ext2
+	cramfs
+nodev	ramfs
+	msdos
+	vfat
+nodev	nfs
+nodev	mqueue
+nodev	rpc_pipefs
+nodev	fuse
+	fuseblk
+nodev	fusectl
+=== SECCOMP ===
+=== LIMITS ===
+time(seconds)        unlimited
+file(blocks)         unlimited
+data(kbytes)         unlimited
+stack(kbytes)        8192
+coredump(blocks)     0
+memory(kbytes)       unlimited
+locked memory(kbytes) 32
+process              2048
+nofiles              1024
+vmemory(kbytes)      unlimited
+locks                unlimited
+=== END ===
+sh: 
+: not found
+
